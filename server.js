@@ -87,6 +87,16 @@ app.get('/about', (req, resp) =>{
     });
 })
 
+app.get('/projects', (req, resp) => {
+
+    //-- setting dynamic data to current page is easy just by passing 
+    //-- handle bar
+    resp.render('projects.hbs', {
+        pageTitle: 'Project/Porfolio Page',
+        currentYear: new Date().getFullYear()
+    });
+})
+
 //-- listining to port 3000
 app.listen(port, ()=>{
     console.log(`server is up on port ${port}`);
